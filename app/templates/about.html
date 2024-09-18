@@ -1,0 +1,79 @@
+{% extends "base.html" %} {% block title %}About Me{% endblock %} {% block
+stylesheets %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/about.css') }}"
+/>
+{% endblock %}{% block content %}
+<section id="about">
+  <h1>About Me</h1>
+  <p>
+    I am a seasoned systems engineer and program manager with over a decade of
+    experience leading groundbreaking projects in the medical device industry.
+    My passion for advancing healthcare technology has driven me to contribute
+    to numerous successful products and innovations, all while managing
+    cross-functional teams.
+  </p>
+
+  <section id="journey">
+    <h2>My Journey in Medical Devices</h2>
+    <p>
+      After earning degrees in Biomedical Engineering, I began my career at
+      <strong>Mako Surgical</strong>, where I helped design groundbreaking
+      robotic systems for orthopedic surgery. This role allowed me to combine my
+      engineering expertise with my passion for innovation, resulting in systems
+      now used in thousands of surgeries worldwide.
+    </p>
+    <p>
+      I continued to grow my career earning my degrees in Industrial & Systems
+      Engineering and an MBA while at <strong>Auris Robotics</strong>, where I
+      managed the capital hardware development of a revolutionary Bronchoscopic
+      robotic system and later an Endourology platform. After Auris was acquired
+      by <strong>Johnson & Johnson</strong>, I further honed my skills in
+      managing FDA submissions, leading successful 510(k) clearances, and
+      optimizing development workflows for compliance with stringent industry
+      standards.
+    </p>
+    <p>
+      Today, I work at <strong>Dexcom</strong>, leading the integration of
+      hardware and software systems for continuous glucose monitoring (CGM)
+      technologies. My focus is on enabling partners to leverage Dexcom’s CGM
+      technology, integrating it into various healthcare systems to improve the
+      lives of millions of patients globally.
+    </p>
+  </section>
+
+  <section id="career-highlights">
+    <h2>Career Highlights</h2>
+    <ul>
+      <li>
+        <strong>Mako Surgical (acquired by Stryker):</strong> Key contributor to
+        the design of robotic-assisted surgical systems for orthopedics.
+      </li>
+      <li>
+        <strong>Auris Robotics (acquired by Johnson & Johnson):</strong> Led
+        platform development for surgical robotics, resulting in FDA-cleared
+        systems for bronchoscopy and endourology.
+      </li>
+      <li>
+        <strong>Dexcom (Current):</strong> Leading the integration of CGM
+        technologies with partner systems, impacting millions of patients
+        globally.
+      </li>
+    </ul>
+  </section>
+
+  <section id="what-drives-me">
+    <h2>What Drives Me</h2>
+    <p>
+      I believe that healthcare technology should enhance the lives of patients
+      while empowering healthcare professionals. My approach combines deep
+      technical expertise with strategic leadership to ensure projects are not
+      only completed but deliver impactful and innovative solutions. I strive to
+      ensure every project I lead adheres to the highest industry standards,
+      providing lasting value for patients and healthcare providers alike.
+    </p>
+  </section>
+</section>
+
+{% endblock %}

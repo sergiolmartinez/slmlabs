@@ -1,0 +1,31 @@
+# Ignore the virtual environment directory
+venv/
+.venv/
+
+# Ignore Python bytecode files
+*.pyc
+__pycache__/
+
+# Ignore the .env file where we store sensitive environment variables
+.env
+
+# Ignore SQLite database files
+*.sqlite3
+*.db
+
+# Ignore any log files
+*.log
+
+# Ignore IDE-specific files (e.g., from VSCode or PyCharm)
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled object files, static assets, or caches
+*.o
+*.so
+*.pyd
+.cache/

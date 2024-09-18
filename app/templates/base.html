@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}SLM Labs{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    <!-- Page-specific styles -->
+    {% block stylesheets %}{% endblock %}
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header>
+      <header>
+        <nav id="brand-nav">
+          <a href="/">
+            <div class="brand">
+              <img src="/static/images/flask.png" alt="SLM Labs Logo" />
+              <span>SLM Labs</span>
+            </div>
+          </a>
+          <div id="desktop-nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+          </div>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hamburger Menu Icon for mobile -->
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <!-- Mobile Nav Menu -->
+      <div id="mobile-nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Sergio Martinez</p>
+      <ul>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/sergio-martinez-45bbba1b/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000"
+              alt="LinkedIn"
+              width="30"
+              height="30"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/sergiolmartinez "
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              src="https://img.icons8.com/?size=100&id=akG4VRhAoSii&format=png&color=000000"
+              alt="GitHub"
+              width="30"
+              height="30"
+          /></a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

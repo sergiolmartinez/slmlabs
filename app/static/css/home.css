@@ -1,0 +1,223 @@
+/* Intro Section */
+#intro {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f4f4f4; /* Light background to make the intro stand out */
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.intro-text {
+  flex: 1;
+  text-align: left;
+}
+
+.intro-text h1 {
+  font-size: 2.8em;
+  color: #222831;
+  font-family: "Kanit", sans-serif;
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #393e46;
+  margin-bottom: 20px;
+}
+
+.intro-image {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.intro-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Expertise Section */
+#expertise {
+  padding: 60px 20px;
+  background-color: #f9f9f9; /* Subtle background to match other sections */
+}
+
+#expertise h2 {
+  margin-bottom: 40px;
+  font-size: 2.2em;
+  color: #222831;
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+}
+
+#expertise ul {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Flexible grid */
+  gap: 30px;
+  padding: 0;
+  list-style-type: none;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+#expertise li {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px; /* More rounded corners for a modern look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border: 1px solid #e0e0e0; /* Light border to define the cards */
+}
+
+#expertise li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow only on hover */
+}
+
+#expertise h3 {
+  font-size: 1.6em;
+  color: #222831;
+  font-family: "Kanit", sans-serif;
+  margin-bottom: 15px;
+}
+
+#expertise p {
+  font-size: 1.1em;
+  color: #393e46;
+  line-height: 1.6;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+/* Services Section */
+#services {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+#services h2 {
+  margin-bottom: 40px;
+  font-size: 2.2em;
+  color: #222831;
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+}
+
+#services ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#services ul li {
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: left;
+  padding-left: 30px;
+  position: relative;
+}
+
+#services ul li::before {
+  content: "•"; /* Custom bullet point */
+  color: #00adb5;
+  font-size: 1.5em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#services strong {
+  font-weight: 600;
+  color: #222831;
+}
+
+/* Call to Action Section */
+#cta {
+  background-color: #00adb5;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 60px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+#cta p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+#cta h2 {
+  font-size: 2.2em;
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+}
+
+#cta a {
+  background-color: #ff5722;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.3em;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+#cta a:hover {
+  background-color: #e64a19;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .intro-content {
+    flex-direction: column;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
+  .intro-image {
+    max-width: 80%;
+    margin: 20px auto;
+  }
+
+  #expertise ul {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+
+  #expertise li {
+    padding: 20px;
+  }
+
+  #expertise h3 {
+    font-size: 1.5em;
+  }
+
+  #expertise p {
+    font-size: 1.1em;
+  }
+
+  #cta a {
+    width: 100%; /* Full width button on mobile */
+    padding: 12px 0;
+  }
+}

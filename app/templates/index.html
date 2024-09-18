@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block title %}Sergio Martinez - Engineering &
+Program Management{% endblock %} {% block stylesheets %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/home.css') }}"
+/>
+{% endblock %} {% block content %}
+<section id="intro">
+  <div class="intro-content">
+    <div class="intro-text">
+      <h1>Hi, I'm Sergio</h1>
+      <p>
+        With over 13 years of experience in the medical device industry, I bring
+        innovative solutions that bridge the gap between biomedical engineering
+        and program management. I offer consulting services that drive the
+        development and success of groundbreaking medical technologies.
+      </p>
+      <p>
+        Let’s work together to elevate your medical device projects to the next
+        level.
+      </p>
+    </div>
+    <div class="intro-image">
+      <img src="/static/images/sergio.png" alt="Sergio L. Martinez Jr." />
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <h2>My Expertise</h2>
+  <ul>
+    <li>
+      <h3>Program Management</h3>
+      <p>
+        Leading cross-functional teams to deliver complex projects on time, from
+        concept to launch.
+      </p>
+    </li>
+    <li>
+      <h3>Process Optimization</h3>
+      <p>
+        Improving efficiency in R&D, manufacturing, and regulatory workflows.
+      </p>
+    </li>
+    <li>
+      <h3>Regulatory Compliance</h3>
+      <p>
+        Expertise with FDA 510(k) submissions, ISO, and quality management
+        systems.
+      </p>
+    </li>
+  </ul>
+</section>
+
+<section id="services">
+  <h2>How I Can Help</h2>
+  <ul>
+    <li>
+      <strong>Medical device and surgical robotics product development</strong>:
+      Expertise in developing innovative and cutting-edge medical technologies.
+    </li>
+    <li>
+      <strong>Cross-functional team leadership and program management</strong>:
+      Driving successful outcomes through collaborative project management.
+    </li>
+    <li>
+      <strong>Quality systems (QMS) and regulatory compliance consulting</strong
+      >: Ensuring adherence to industry standards and regulatory requirements.
+    </li>
+    <li>
+      <strong>Strategic consulting for startups and scaling companies</strong>:
+      Tailored solutions for growing and scaling operations effectively.
+    </li>
+  </ul>
+</section>
+
+<section id="cta">
+  <h2>Let’s Work Together</h2>
+  <p>
+    Looking for an experienced consultant to help you succeed in the medical
+    device industry? <a href="/contact">Contact me today</a>.
+  </p>
+</section>
+
+{% endblock %}

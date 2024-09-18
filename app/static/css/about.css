@@ -1,0 +1,147 @@
+/* About Page */
+#about {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#about h1,
+#about h2 {
+  color: #222831;
+  font-family: "Kanit", sans-serif;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+/* Improved readability and alignment for paragraphs */
+#about p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #393e46;
+  margin-bottom: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* Left-align for better readability in longer paragraphs */
+}
+
+/* Subsection Styling */
+#journey,
+#career-highlights,
+#what-drives-me {
+  margin-bottom: 60px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#journey h2,
+#career-highlights h2,
+#what-drives-me h2 {
+  font-size: 2em;
+  color: #222831;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* List Styling for Career Highlights */
+#career-highlights ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#career-highlights ul li {
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+  text-align: left;
+}
+
+#career-highlights ul li::before {
+  content: "•";
+  color: #00adb5;
+  font-size: 1.5em;
+  position: absolute;
+  left: 0;
+  top: 5px; /* Adjust to align the bullet point properly */
+}
+
+/* Call to Action Section */
+#cta {
+  background-color: #00adb5;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+#cta h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-family: "Kanit", sans-serif;
+}
+
+#cta p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #eeeeee;
+}
+
+/* CTA Button Styling */
+#cta a {
+  color: white;
+  font-size: 1.3em;
+  padding: 15px 30px;
+  background-color: #ff5722;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+#cta a:hover {
+  background-color: #e64a19;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  #about h1,
+  #about h2 {
+    font-size: 2.2em;
+  }
+
+  #about p {
+    font-size: 1.1em;
+  }
+
+  #journey h2,
+  #career-highlights h2,
+  #what-drives-me h2 {
+    font-size: 1.8em;
+  }
+
+  #career-highlights ul li {
+    padding-left: 20px;
+  }
+
+  #cta {
+    padding: 30px;
+  }
+
+  #cta h2 {
+    font-size: 1.8em;
+  }
+
+  #cta a {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
