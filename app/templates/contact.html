@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block title %}Contact Sergio Martinez{% endblock
-%}{% block stylesheets %}
+{% extends "base.html" %} {% block title %}Contact Sergio Martinez{% endblock %}
+{% block stylesheets %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/contact.css') }}"
@@ -32,6 +32,15 @@
       {% endif %}
     </div>
 
+    <!-- Added optional phone field -->
+    <div>
+      {{ form.phone.label }}<br />
+      {{ form.phone(size=32) }}<br />
+      {% if form.phone.errors %}
+      <span style="color: red">{{ form.phone.errors[0] }}</span>
+      {% endif %}
+    </div>
+
     <div>
       {{ form.message.label }}<br />
       {{ form.message(rows=4, cols=50) }}<br />
@@ -39,6 +48,9 @@
       <span style="color: red">{{ form.message.errors[0] }}</span>
       {% endif %}
     </div>
+
+    <!-- Added checkbox for sending a copy of the message -->
+    <div>{{ form.send_copy.label }} {{ form.send_copy }}<br /></div>
 
     <button type="submit">Send Message</button>
   </form>
