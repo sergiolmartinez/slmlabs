@@ -109,10 +109,13 @@ nav {
 }
 /* Footer */
 footer {
+  display: flex;
   background-color: #222831;
   color: white;
   text-align: center;
   padding: 20px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 footer ul {

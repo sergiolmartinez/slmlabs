@@ -23,7 +23,7 @@
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  text-align: left; /* Left-align for better readability in longer paragraphs */
+  text-align: justify; /* Left-align for better readability in longer paragraphs */
 }
 
 /* Subsection Styling */
@@ -42,7 +42,7 @@
   font-size: 2em;
   color: #222831;
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 /* List Styling for Career Highlights */

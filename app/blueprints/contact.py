@@ -43,7 +43,8 @@ def contact_page():
             )
 
         # Flash success message
-        flash(f'Message from {name} has been sent successfully!', 'success')
+        flash(f'Thank you, {
+              name}. Your message has been sent successfully!', 'success')
         return redirect(url_for('contact.contact_page'))
 
     return render_template('contact.html', form=form)
@@ -62,5 +63,6 @@ def send_email(subject, body, to_email):
         sg = SendGridAPIClient(os.getenv('SENDGRID_API_KEY'))
         sg.send(message)
     except Exception as e:
-        flash('Error sending email. Please try again later.', 'error')
+        flash(
+            'An error occurred while sending your message. Please try again later.', 'error')
         print(e)

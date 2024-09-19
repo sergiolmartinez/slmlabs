@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block title %}Contact Sergio Martinez{% endblock %}
-{% block stylesheets %}
+{% extends "base.html" %} {% block title %}SLM Labs - Contact{% endblock %} {%
+block stylesheets %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/contact.css') }}"
@@ -9,9 +9,15 @@
   <h1>Contact Me</h1>
   <p>
     Ready to discuss your next project? Whether you need program management,
-    technical leadership, or help with FDA compliance, I’m here to help. Let’s
-    work together to bring your vision to life.
+    technical leadership, process development, or help with FDA compliance, I’m
+    here to help. Let’s work together to bring your vision to life.
   </p>
+
+  <!-- Display flash messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %} {% for category, message in messages %}
+  <div class="alert alert-{{ category }}">{{ message }}</div>
+  {% endfor %} {% endif %} {% endwith %}
 
   <form method="POST" action="{{ url_for('contact.contact_page') }}">
     {{ form.hidden_tag() }}
@@ -32,7 +38,6 @@
       {% endif %}
     </div>
 
-    <!-- Added optional phone field -->
     <div>
       {{ form.phone.label }}<br />
       {{ form.phone(size=32) }}<br />
@@ -49,8 +54,11 @@
       {% endif %}
     </div>
 
-    <!-- Added checkbox for sending a copy of the message -->
-    <div>{{ form.send_copy.label }} {{ form.send_copy }}<br /></div>
+    <div class="form-checkbox">
+      <div>{{ form.send_copy }}</div>
+      <div>{{ form.send_copy.label }}</div>
+      <br />
+    </div>
 
     <button type="submit">Send Message</button>
   </form>
