@@ -1,5 +1,46 @@
 {% extends "base.html" %} {% block title %}SLM Labs - About Me{% endblock %} {%
-block stylesheets %}
+block meta %}
+<!-- Meta Tags for SEO -->
+<meta
+  name="description"
+  content="Learn about Sergio Martinez, a medical device consultant with expertise in biomedical engineering, systems engineering, and regulatory compliance."
+/>
+<meta
+  name="keywords"
+  content="about Sergio Martinez, medical device consultant, biomedical engineering, systems engineering, robotics, program management"
+/>
+<meta name="author" content="Sergio Martinez" />
+
+<!-- Open Graph Tags for Social Sharing -->
+<meta
+  property="og:title"
+  content="About Sergio Martinez - Medical Device Consultant"
+/>
+<meta
+  property="og:description"
+  content="Discover Sergio Martinez's journey in medical devices, including his experience in biomedical engineering, program management, and regulatory compliance."
+/>
+<meta
+  property="og:image"
+  content="{{ url_for('static', filename='images/monarch_image.png') }}"
+/>
+<meta property="og:url" content="https://www.slmlabs.com/about" />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta
+  name="twitter:title"
+  content="About Sergio Martinez - Medical Device Consultant"
+/>
+<meta
+  name="twitter:description"
+  content="Explore Sergio Martinez's background and expertise in medical devices and program management."
+/>
+<meta
+  name="twitter:image"
+  content="{{ url_for('static', filename='images/monarch_image.png') }}"
+/>
+{% endblock %} {% block stylesheets %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/about.css') }}"

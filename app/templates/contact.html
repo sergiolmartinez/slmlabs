@@ -1,5 +1,47 @@
 {% extends "base.html" %} {% block title %}SLM Labs - Contact{% endblock %} {%
-block stylesheets %}
+block meta %}
+<!-- Meta Tags for SEO -->
+<meta
+  name="description"
+  content="Contact Sergio Martinez for expert consulting in medical device development, regulatory compliance, and program management."
+/>
+<meta
+  name="keywords"
+  content="contact Sergio Martinez, medical device consultant, program management, regulatory compliance, biomedical engineering, robotics consulting"
+/>
+<meta name="author" content="Sergio Martinez" />
+
+<!-- Open Graph Tags for Social Sharing -->
+<meta
+  property="og:title"
+  content="Contact Sergio Martinez - Medical Device Consultant"
+/>
+<meta
+  property="og:description"
+  content="Get in touch with Sergio Martinez for consulting services in medical device development and regulatory compliance."
+/>
+<meta
+  property="og:image"
+  content="{{ url_for('static', filename='images/monarch_image.png') }}"
+/>
+<meta property="og:url" content="https://www.slmlabs.com/contact" />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta
+  name="twitter:title"
+  content="Contact Sergio Martinez - Medical Device Consultant"
+/>
+<meta
+  name="twitter:description"
+  content="Reach out to Sergio Martinez for consulting services in the medical device industry."
+/>
+<meta
+  name="twitter:image"
+  content="{{ url_for('static', filename='images/monarch_image.png') }}"
+/>
+
+{% endblock %} {% block stylesheets %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/contact.css') }}"

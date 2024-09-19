@@ -1,5 +1,46 @@
-{% extends "base.html" %} {% block title %}SLM Labs{% endblock %} {% block
-stylesheets %}
+{% extends "base.html" %} {% block title %}SLM Labs{% endblock %} {% block meta
+%}
+
+<meta
+  name="description"
+  content="Sergio Martinez is a medical device consultant specializing in program management, regulatory compliance, and biomedical engineering."
+/>
+<meta
+  name="keywords"
+  content="medical device consultant, biomedical engineering, program management, regulatory compliance, medical devices, systems engineering, robotics consulting"
+/>
+<meta name="author" content="Sergio Martinez" />
+
+<!-- Open Graph Tags for Social Sharing -->
+<meta
+  property="og:title"
+  content="Sergio Martinez - Medical Device Consultant"
+/>
+<meta
+  property="og:description"
+  content="With over a decade of experience in medical devices, I offer consulting services in program management, regulatory compliance, and biomedical engineering."
+/>
+<meta
+  property="og:image"
+  content="{{ url_for('static', filename='images/monarch_image.png') }}"
+/>
+<meta property="og:url" content="https://www.slmlabs.com" />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta
+  name="twitter:title"
+  content="Sergio Martinez - Medical Device Consultant"
+/>
+<meta
+  name="twitter:description"
+  content="Medical device consultant with expertise in program management, regulatory compliance, and biomedical engineering."
+/>
+<meta
+  name="twitter:image"
+  content="{{ url_for('static', filename='images/monarch_image.png') }}"
+/>
+{% endblock %} {% block stylesheets %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/home.css') }}"

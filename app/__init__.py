@@ -19,10 +19,12 @@ def create_app():
     from app.blueprints.blog import blog
     from app.blueprints.about import about
     from app.blueprints.contact import contact
+    from app.blueprints.sitemap import sitemap  # Add sitemap blueprint
 
     app.register_blueprint(home)
     app.register_blueprint(blog)
     app.register_blueprint(about)
     app.register_blueprint(contact)
+    app.register_blueprint(sitemap)  # Register sitemap blueprint
 
     return app
