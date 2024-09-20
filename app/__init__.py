@@ -2,6 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 from config import Config
+import logging
+from logging.handlers import RotatingFileHandler
 
 db = SQLAlchemy()
 csrf = CSRFProtect()
@@ -26,5 +28,23 @@ def create_app():
     app.register_blueprint(about)
     app.register_blueprint(contact)
     app.register_blueprint(sitemap)  # Register sitemap blueprint
+
+    # Custom Error Handlers
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('404.html'), 404
+
+    @app.errorhandler(500)
+    def internal_server_error(e):
+        return render_template('500.html'), 500
+
+    # Logging configuration for production
+    if not app.debug:
+        file_handler = RotatingFileHandler(
+            'logs/slmlabs.log', maxBytes=10240, backupCount=10)
+        file_handler.setLevel(logging.INFO)
+        app.logger.addHandler(file_handler)
+        app.logger.setLevel(logging.INFO)
+        app.logger.info('SLM Labs startup')
 
     return app
