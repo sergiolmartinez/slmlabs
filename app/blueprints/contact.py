@@ -31,7 +31,8 @@ def contact_page():
         send_email(
             subject=f"New contact form submission from {name}",
             body=email_body,
-            to_email='sergio@slmlabs.com'  # Change to your receiving email
+            # Change to your receiving email
+            to_email=os.getenv('SENDGRID_DEFAULT_RECEIVER')
         )
 
         # Optionally send a copy to the user
