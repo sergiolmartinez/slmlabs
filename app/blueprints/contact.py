@@ -43,8 +43,8 @@ def contact_page():
             )
 
         # Flash success message
-        flash(f'Thank you, {
-              name}. Your message has been sent successfully!', 'success')
+        flash(
+            f'Thank you, {name}. Your message has been sent successfully!', 'success')
         return redirect(url_for('contact.contact_page'))
 
     return render_template('contact.html', form=form)
