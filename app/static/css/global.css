@@ -113,8 +113,11 @@ nav {
 }
 /* Footer */
 footer {
+  position: absolute;
+  width: 100%;
   display: flex;
   background-color: #222831;
+  font-size: 0.8rem;
   color: white;
   text-align: center;
   padding: 20px;
@@ -142,6 +145,13 @@ footer ul li a:hover {
   color: #00adb5;
 }
 /* Responsive design */
+@media (max-width: 1024px) {
+  footer {
+    margin-top: 100px;
+    display: block;
+  }
+}
+
 @media (max-width: 768px) {
   #desktop-nav {
     display: none;
