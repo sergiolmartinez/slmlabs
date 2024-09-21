@@ -61,7 +61,7 @@
 }
 
 #career-highlights ul li::before {
-  content: "•";
+  /* content: "•"; */
   color: #00adb5;
   font-size: 1.5em;
   position: absolute;

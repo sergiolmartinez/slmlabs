@@ -1,7 +1,7 @@
 /* Contact Form Styling */
 #contact {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 35px auto;
   padding: 50px 20px;
   text-align: center;
   background-color: #f9f9f9;
@@ -20,10 +20,10 @@
 #contact p {
   font-size: 1.2em;
   line-height: 1.6;
-  margin-bottom: 30px;
   color: #393e46;
   max-width: 700px;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 /* Form Field Styles */
@@ -39,7 +39,6 @@ form label {
   font-weight: 600;
   text-align: left;
   display: block;
-  margin-bottom: 5px;
 }
 
 input,
@@ -118,13 +117,40 @@ span[style="color: red"] {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #contact {
-    padding: 30px 15px;
+    margin: 50px auto;
+    padding: 50px 15px;
   }
 
   form {
     gap: 15px;
+  }
+
+  .form-checkbox input[type="checkbox"] {
+    transform: scale(1); /* Adjust size of the checkbox */
+    margin: 0;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact {
+    margin: 35px auto;
+    padding: 46px 15px;
+  }
+
+  form {
+    gap: 15px;
+  }
+
+  .form-checkbox input[type="checkbox"] {
+    transform: scale(1); /* Adjust size of the checkbox */
+    margin: 0;
   }
 
   button {
