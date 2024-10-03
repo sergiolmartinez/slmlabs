@@ -113,11 +113,13 @@ nav {
 }
 /* Footer */
 footer {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   width: 100%;
   display: flex;
   background-color: #222831;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: white;
   text-align: center;
   padding: 20px;
