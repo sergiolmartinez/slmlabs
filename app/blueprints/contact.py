@@ -1,7 +1,8 @@
-from flask import Blueprint, render_template, redirect, url_for, flash
+from flask import Blueprint, render_template, redirect, url_for, request, flash
 from app.forms import ContactForm
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+from utils.create_assessment import create_assessment
 import os
 
 contact = Blueprint('contact', __name__)
@@ -11,6 +12,40 @@ contact = Blueprint('contact', __name__)
 def contact_page():
     form = ContactForm()
     if form.validate_on_submit():
+        # Get form data
+        token = request.form.get('g-recaptcha-response')
+        recaptcha_action = 'submit'
+
+        # Verify reCAPTCHA
+        if not token:
+            flash('Please complete the reCAPTCHA challenge.', 'error')
+            return redirect(url_for('contact.contact_page'))
+
+        # Create an assessment to analyze the risk of a UI action
+        assessment = create_assessment(
+            project_id=os.getenv('GOOGLE_PROJECT_ID'),
+            recaptcha_site_key=os.getenv('RECAPTCHA_SITE_KEY'),
+            token=token,
+            recaptcha_action=recaptcha_action,
+            user_ip_address=request.remote_addr,
+            user_agent=request.user_agent.string,
+            ja3='Not provided'
+        )
+
+        # print("Assessment: ", assessment)
+
+        # Check if the token is valid
+        if not assessment:
+            flash('An error occurred while verifying the reCAPTCHA response.', 'error')
+            return redirect(url_for('contact.contact_page'))
+
+        # Check if the expected action was executed
+        if not assessment.token_properties.valid:
+            flash('The reCAPTCHA response was invalid.', 'error')
+            return redirect(url_for('contact.contact_page'))
+
+        # Get form data
+
         name = form.name.data
         email = form.email.data
         phone = form.phone.data if form.phone.data else 'Not provided'
@@ -48,7 +83,10 @@ def contact_page():
             f'Thank you, {name}. Your message has been sent successfully!', 'success')
         return redirect(url_for('contact.contact_page'))
 
-    return render_template('contact.html', form=form)
+    # print(request.form)
+    # print(form.errors)
+
+    return render_template('contact.html', form=form, site_key=os.getenv('RECAPTCHA_SITE_KEY'))
 
 # Function to send email using SendGrid
 

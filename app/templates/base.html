@@ -18,6 +18,7 @@
     <!-- Page-specific styles -->
     {% block stylesheets %}{% endblock %}
     <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block head %} {% endblock%}
   </head>
   <body>
     <!-- Navigation -->
@@ -97,5 +98,6 @@
         </ul>
       </div>
     </footer>
+    {% block scripts %}{% endblock %}
   </body>
 </html>
