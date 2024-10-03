@@ -7,7 +7,7 @@ venv/
 __pycache__/
 
 # Ignore the .env file where we store sensitive environment variables
-.env
+.env*
 
 # Ignore SQLite database files
 *.sqlite3

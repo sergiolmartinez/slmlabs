@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
+import logging
 from app.forms import ContactForm
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
@@ -6,6 +7,7 @@ from utils.create_assessment import create_assessment
 import os
 
 contact = Blueprint('contact', __name__)
+logging.basicConfig(level=logging.INFO)
 
 
 @contact.route('/contact', methods=['GET', 'POST'])
@@ -43,6 +45,28 @@ def contact_page():
         if not assessment.token_properties.valid:
             flash('The reCAPTCHA response was invalid.', 'error')
             return redirect(url_for('contact.contact_page'))
+
+        # Check the risk score
+        score = assessment.risk_analysis.score  # Risk score
+        # score = .8  # For testing purposes
+        # score = .2  # For testing purposes
+        reasons = assessment.risk_analysis.reasons  # Reasons for the score
+
+        # Display a message and log the event for low-risk interactions
+        if score >= 0.7:
+            flash('Your interaction is deemed safe.', 'info')
+            logging.info(
+                f"Interaction with risk score {score} and reasons: {reasons}")
+
+        elif score < 0.3:  # Adjust the threshold as needed
+            # Take additional actions for high-risk interactions, such as sending an email or blocking the interaction
+            flash('Your interaction is deemed suspicious.', 'error')
+            logging.warning(
+                f"Interaction with risk score {score} and reasons: {reasons}")
+            return redirect(url_for('contact.contact_page'))
+
+        else:  # Interactions with intermediate scores can be treated normally
+            pass
 
         # Get form data
 
