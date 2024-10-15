@@ -19,18 +19,20 @@ def create_app():
 
     # Register blueprints
     from app.blueprints.home import home
-    from app.blueprints.blog import blog
     from app.blueprints.about import about
     from app.blueprints.contact import contact
     from app.blueprints.sitemap import sitemap  # Add sitemap blueprint
 
     app.register_blueprint(home)
-    app.register_blueprint(blog)
     app.register_blueprint(about)
     app.register_blueprint(contact)
     app.register_blueprint(sitemap)  # Register sitemap blueprint
 
     # Custom Error Handlers
+    @app.route('/5')
+    def index():
+        result = 1 / 0  # This will cause a ZeroDivisionError
+
     @app.errorhandler(404)
     def page_not_found(e):
         return render_template('404.html'), 404
